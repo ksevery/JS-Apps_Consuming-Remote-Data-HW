@@ -26,7 +26,7 @@ define(['q', 'jquery'], function (Q) {
                 url: requestUrl,
                 type: 'POST',
                 dataType: 'json',
-                data: JSON.stringify(data),
+                data: data,
                 headers: headers,
                 success: function (data) {
                     deferred.resolve(data)

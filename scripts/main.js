@@ -34,7 +34,6 @@ require(['httpRequester', 'jquery'], function(){
 
     HttpRequester.getJSON(url, headers)
         .then(function (data) {
-            var dataAsObj = JSON.parse(data);
             var currStudent,
                 list,
                 listItem,
@@ -42,8 +41,8 @@ require(['httpRequester', 'jquery'], function(){
 
             list = $('<ul class="students-list"></ul>');
 
-            for(var i = 0, len = dataAsObj.count; i < len; i++){
-                currStudent = dataAsObj.students[i];
+            for(var i = 0, len = data.count; i < len; i++){
+                currStudent = data.students[i];
                 listItem = $('<li />').html(currStudent.name + ' is in ' + currStudent.grade + ' grade');
                 list.append(listItem);
             }
